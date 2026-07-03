@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #FCFCFA;
+    --paper: #FFFFFF;
     --ink: #1C1B1A;
     --muted: #6D6A66;
     --garnet: #782F40;
@@ -60,8 +60,7 @@
   .header-photo {
     flex-shrink: 0;
     width: 150px;
-    height: 150px;
-    object-fit: cover;
+    height: auto;
     border-radius: 6px;
     border: 1px solid var(--hairline);
   }
@@ -189,6 +188,12 @@
     color: var(--muted);
   }
 
+  a.doi-inline {
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
   .chev {
     justify-self: end;
     color: var(--muted);
@@ -219,15 +224,6 @@
     margin-bottom: 6px;
   }
 
-  .paper-links {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-    font-size: 0.85rem;
-    font-weight: 500;
-  }
-
   /* CV + contact */
   .plain-list { list-style: none; }
   .plain-list li { padding: 6px 0; }
@@ -252,7 +248,7 @@
     .paper-body { padding-left: 0; }
     header { padding: 40px 0 32px; }
     .header-grid { flex-direction: column; gap: 20px; }
-    .header-photo { width: 120px; height: 120px; }
+    .header-photo { width: 120px; height: auto; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -274,7 +270,7 @@
         <p class="bio">My research interests include public and labor economics, with a primary interest in how tax policy affects families.</p>
         <div class="contact-row">
           <div><span class="label">Email</span> lprodgers [at] fsu [dot] edu</div>
-          <div><span class="label">CV</span> <a href="RodgersCV.pdf">Curriculum Vitae (PDF)</a></div>
+          <div><span class="label">CV</span> <a href="cv.pdf">Curriculum Vitae (PDF)</a></div>
         </div>
       </div>
     </div>
@@ -300,16 +296,28 @@
       <summary>
         <span class="year">2026</span>
         <span class="paper-title">Adding Race and Ethnicity to Microeconomic Databases: An Assessment of Alternative Options
-          <span class="paper-meta">with Keith Ihlanfeldt and Cynthia Yang. Forthcoming, Economic Inquiry.</span>
+          <span class="paper-meta">with Keith Ihlanfeldt and Cynthia Fan Yang. Economic Inquiry. <a class="doi-inline" href="https://doi.org/10.1111/ecin.70052" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          Using a unique dataset that identifies homeowners’ race/ethnicity and gender, we measure group differences in key tax ratios affecting property taxes in Florida. Significant heterogeneity exists across jurisdictions, but there are important commonalities previously undocumented. Consistent with prior studies, initial property assessments are unfavorable to black and Hispanic homeowners relative to white homeowners. New evidence shows that Asian (female) homeowners face the largest (smallest) relative tax burden. Assessment errors rarely explain differences in property tax bills, however. More consequential to tax bills are group differences in benefits from tax relief programs, such as homestead exemptions and assessment growth caps.
+          Estimating differences between racial/ethnic groups often requires merging demographic variables from one dataset to variables of interest in another. A common method merges Home Mortgage Disclosure Act data to property databases. One alternative is to acquire this information from voter registration files; another is to predict race with a name-based algorithm. Compared to Census data, which method is more representative varies by location and group. We explore the practical implications of each method by using the matched samples in two empirical applications. Researchers can arrive at different conclusions about racial/ethnic disparities depending on the method selected.
         </div>
-        <div class="paper-links">
-          <a href="http://doi.org/10.1111/ecin.70052" target="_blank" rel="noopener">Journal &#8599;</a>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2025</span>
+        <span class="paper-title">Fiscal Incidence of the Property Tax
+          <span class="paper-meta">with Keith Ihlanfeldt. Public Finance Review, 53(3): 296-339. <a class="doi-inline" href="https://doi.org/10.1177/10911421241275214" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          We use data from Florida spanning a decade (2010-2019) to empirically revisit the topic of fiscal incidence, the difference between benefits received and taxes paid, as it applies to property taxation. We first estimate demand equations in order to calculate the Lindahl tax share, or price the median voter would be willing to pay for public goods. Our measure of fiscal incidence is the difference between the Lindahl tax share and the actual tax share. With the exception of police and fire expenditures, benefits tend to outweigh costs for those with higher incomes, a pattern we attribute to public goods being valued more by high-income residents who pay a modestly progressive property tax.
         </div>
       </div>
     </details>
@@ -318,34 +326,13 @@
       <summary>
         <span class="year">2024</span>
         <span class="paper-title">Housing Values and Jurisdictional Fragmentation
-          <span class="paper-meta">with John Hatfield and Katrina Kosec. Public Choice.</span>
+          <span class="paper-meta">with John William Hatfield and Katrina Kosec. Public Choice, 201: 83-122. Winner of the 2024 Duncan Black Prize. <a class="doi-inline" href="https://doi.org/10.1007/s11127-024-01160-6" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://doi.org/10.1007/s11127-024-01160-6" target="_blank" rel="noopener">Journal &#8599;</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="paper">
-      <summary>
-        <span class="year">2024</span>
-        <span class="paper-title">Fiscal Incidence of the Property Tax
-          <span class="paper-meta">with Keith Ihlanfeldt. Public Finance Review.</span>
-        </span>
-        <span class="chev" aria-hidden="true">&#9656;</span>
-      </summary>
-      <div class="paper-body">
-        <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://doi.org/10.1177/10911421241275214" target="_blank" rel="noopener">Journal &#8599;</a>
+          We investigate the impact of the number of local governments in a metropolitan area on housing values within the United States. We find that metropolitan areas with one standard deviation more counties have housing values that are almost 11% higher. This difference may be driven by the fact that we also find higher wages (accounting for worker characteristics) in areas with more local governments. Moreover, we find that areas with more local governments have more business-friendly policies, such as freer labor markets, but similar levels of taxation and spending. The number of local governments does not seem to significantly impact environmental quality, educational outcomes, or crime.
         </div>
       </div>
     </details>
@@ -354,16 +341,13 @@
       <summary>
         <span class="year">2023</span>
         <span class="paper-title">The Impact of the WWI Agricultural Boom and Bust on Female Opportunity Cost and Fertility
-          <span class="paper-meta">with Carl Kitchens. The Economic Journal, 133(656): 2978-3006.</span>
+          <span class="paper-meta">with Carl Kitchens. The Economic Journal, 133(656): 2978-3006. <a class="doi-inline" href="https://doi.org/10.1093/ej/uead047" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://doi.org/10.1093/ej/uead047" target="_blank" rel="noopener">Journal &#8599;</a>
+          Using variation in crop prices induced by large swings in demand surrounding World War I, we examine the fertility response to crop revenue increases from 1910 to 1930. Our estimates indicate that agricultural price increases reduced fertility, explaining about 9% of the overall decline in fertility over the period. The effect persists years after the collapse of the war boom. Importantly, we show that fertility declines were concentrated in farm women and fertility declined along intensive and extensive margins. Combined, the pattern of estimates is consistent with agricultural women experiencing an increase in the opportunity cost of their time.
         </div>
       </div>
     </details>
@@ -372,16 +356,13 @@
       <summary>
         <span class="year">2023</span>
         <span class="paper-title">Tax Credit Refundability and Child Care Prices: Evidence from California
-          <span class="paper-meta">National Tax Journal, 76(1).</span>
+          <span class="paper-meta">National Tax Journal, 76(1): 95-116. <a class="doi-inline" href="https://doi.org/10.1086/723229" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://doi.org/10.1086/723229" target="_blank" rel="noopener">Journal &#8599;</a>
+          A common critique of nonrefundable tax credits is that benefits are limited for low-income households. Costs often dominate the refundability debate, yet how much households benefit from refundability depends on the incidence of the credit in question. California provides a unique opportunity to study how eliminating refundability of child care tax credits affects child care prices while holding other policy dimensions fixed. Using county-level price and tax return data, this study finds that nonrefundability corresponds with lower child care prices. If the price response is symmetrical and quality adjustments are limited, refundability may benefit low-income families less than the cost of the program would suggest.
         </div>
       </div>
     </details>
@@ -390,16 +371,13 @@
       <summary>
         <span class="year">2022</span>
         <span class="paper-title">Homestead Exemptions, Heterogeneous Assessment, and Property Tax Progressivity
-          <span class="paper-meta">with Keith Ihlanfeldt. National Tax Journal, 75(1): 7-31.</span>
+          <span class="paper-meta">with Keith Ihlanfeldt. National Tax Journal, 75(1): 7-31. <a class="doi-inline" href="https://doi.org/10.1086/717587" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://doi.org/10.1086/717587" target="_blank" rel="noopener">Journal &#8599;</a>
+          Homestead exemption policies are ostensibly intended to reduce the property tax burden of lower-income homeowners. Because assessment rates tend to be lower for higher-priced homes, the opposing effects of exemptions and regressive assessments can result in either a regressive or progressive property tax. Using 2018 data on all single-family homes in Florida, we find that in the majority of counties, the homestead exemption dominates regressive assessment, resulting in a progressive tax. We also explore how progressivity would be affected by modifying current features of the property tax, including the homestead exemption take-up rate, the cap on valuation growth, and regressive assessments.
         </div>
       </div>
     </details>
@@ -408,16 +386,13 @@
       <summary>
         <span class="year">2021</span>
         <span class="paper-title">Dinner Timing and Human Capital Investments in Children
-          <span class="paper-meta">with Joseph Price and Jocelyn Wikle. Review of Economics of the Household, 19: 1047-1075.</span>
+          <span class="paper-meta">with Joseph Price and Jocelyn S. Wikle. Review of Economics of the Household, 19(4): 1047-1075. <a class="doi-inline" href="https://doi.org/10.1007/s11150-021-09554-x" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://doi.org/10.1007/s11150-021-09554-x" target="_blank" rel="noopener">Journal &#8599;</a>
+          Although previous research documents that having dinner together as a family positively relates to long-run child and family outcomes, one aspect of family dinner that has not been explored previously is the role that dinner timing may play in facilitating or hindering parental time investments in their children. We use time diary data for roughly 41,000 families from the nationally representative American Time Use Survey (2003-2019) to examine whether the timing of family dinner is correlated with differential parental time investments in children during the evening. We find that parents who start dinner as a family before the median time (6:15 p.m.) spend more quality time in the evening with their children, including more time reading and playing with their children. The relationship cannot be explained by observable family constraints, as it is stable regardless of parental labor force activity and the day of the week.
         </div>
       </div>
     </details>
@@ -426,16 +401,13 @@
       <summary>
         <span class="year">2020</span>
         <span class="paper-title">Don't Tax My Dreams: The Lottery Sales Response to Gambling Tax Changes
-          <span class="paper-meta">Public Finance Review, 48(5): 627-649.</span>
+          <span class="paper-meta">Public Finance Review, 48(5): 627-649. <a class="doi-inline" href="https://doi.org/10.1177/1091142120945287" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://doi.org/10.1177/1091142120945287" target="_blank" rel="noopener">Journal &#8599;</a>
+          Legalized gambling is a popular source of tax revenue in the United States. However, the ability to increase gambling tax revenue through higher tax rates is limited by the presence of nontaxable and cross-border substitutes. In July 2009, New Hampshire introduced a 10 percent tax on gambling winnings, substantially reducing the expected value of a gamble while leaving other aspects of gambling unaffected; the tax was repealed in May 2011. Using a novel data set and a difference-in-differences framework, I document significant reductions in New Hampshire lottery sales under the tax policy and estimate a price elasticity greater than -1. The response is consistent with informed choice by consumers, and larger changes in border areas provide suggestive evidence of cross-border shopping.
         </div>
       </div>
     </details>
@@ -444,16 +416,13 @@
       <summary>
         <span class="year">2020</span>
         <span class="paper-title">Who Responds to Changes to the Federal Adoption Tax Credit? Evidence from Florida
-          <span class="paper-meta">with Cullen Wallace. Southern Economic Journal, 87(2): 483-516.</span>
+          <span class="paper-meta">with Cullen T. Wallace. Southern Economic Journal, 87(2): 483-516. <a class="doi-inline" href="https://doi.org/10.1002/soej.12466" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://doi.org/10.1002/soej.12466" target="_blank" rel="noopener">Journal &#8599;</a>
+          The federal adoption tax credit (ATC) can help offset the cost of adoption, yet it is unclear whether it has a positive impact on the number of adoptions or if it merely transfers resources to households who would have adopted anyway. The ATC has primarily been a nonrefundable tax credit, but in 2010 and 2011 the full amount (over $13,000) was available as a refundable tax credit, representing a substantial increase in the benefit to lower- and middle-income families, those with typically low tax liability. Using county-level data from Florida, we estimate an increase of 265 additional public adoptions over what would be expected at the end of 2011. Relative decreases in adoptions in the first months of 2012 suggest that much of this increase is due to retiming rather than new adoptions. The response appears to be concentrated in lower- and middle-income households living in higher-income, more populated areas.
         </div>
       </div>
     </details>
@@ -461,17 +430,14 @@
     <details class="paper">
       <summary>
         <span class="year">2020</span>
-        <span class="paper-title">The Impact of Paid Family Leave on Household Saving
-          <span class="paper-meta">Labour Economics, 67.</span>
+        <span class="paper-title">The Impact of Paid Family Leave on Household Savings
+          <span class="paper-meta">Labour Economics, 67: 101921. <a class="doi-inline" href="https://doi.org/10.1016/j.labeco.2020.101921" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="http://www.sciencedirect.com/science/article/pii/S0927537120301251" target="_blank" rel="noopener">Journal &#8599;</a>
+          Research on paid family leave (PFL) has largely focused on various child outcomes and the labor force outcomes of mothers. Absent from previous work is an analysis of how such a policy alters incentives to plan for expected income shocks, a central question in other social insurance contexts. A conceptual framework demonstrates the potential for PFL to increase or decrease household saving depending on labor supply flexibility assumptions. Using the Survey of Income and Program Participation, I present evidence that the introduction of PFL in California reduced the savings of expectant parents relative to different comparison groups. Imprecise heterogeneity analysis suggests the crowd out is concentrated in higher-income families.
         </div>
       </div>
     </details>
@@ -480,16 +446,13 @@
       <summary>
         <span class="year">2018</span>
         <span class="paper-title">Give Credit Where? The Incidence of Child Care Tax Credits
-          <span class="paper-meta">Journal of Urban Economics, 108: 51-71.</span>
+          <span class="paper-meta">Journal of Urban Economics, 108: 51-71. <a class="doi-inline" href="https://doi.org/10.1016/j.jue.2018.10.002" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
-          [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="http://www.sciencedirect.com/science/article/pii/S0094119018300792" target="_blank" rel="noopener">Journal &#8599;</a>
+          The cost of child care can affect a family's employment, location, and commuting decisions. Child care tax credits are intended to relieve the financial burden of child care for working families, yet the benefit incidence may fall on child care providers if they increase prices in response to credit generosity. Using policy-induced variation in the Child and Dependent Care Credit, this paper presents evidence of substantial pass-through: over half of every dollar is passed through to providers in the form of higher prices and wages. Increased non-refundable credit generosity may have the unintended effect of making child care less affordable for low-income families, a result with distributional and spatial implications due to income sorting of families within an urban area.
         </div>
       </div>
     </details>
@@ -520,16 +483,13 @@
       <summary>
         <span class="year">NBER</span>
         <span class="paper-title">Skill Formation, Child Labor, and the Schooling Consequences of the World War I Agricultural Boom
-          <span class="paper-meta">with Taylor Jaworski and Carl Kitchens. NBER Working Paper 35032.</span>
+          <span class="paper-meta">with Taylor Jaworski and Carl Kitchens. NBER Working Paper 35032. <a class="doi-inline" href="https://www.nber.org/papers/w35032" target="_blank" rel="noopener" onclick="event.stopPropagation()">Paper &#8599;</a></span>
         </span>
         <span class="chev" aria-hidden="true">&#9656;</span>
       </summary>
       <div class="paper-body">
         <div class="abstract"><span class="abstract-label">Abstract</span>
           [Paste abstract here.]
-        </div>
-        <div class="paper-links">
-          <a href="https://www.nber.org/papers/w35032" target="_blank" rel="noopener">NBER &#8599;</a>
         </div>
       </div>
     </details>
@@ -586,8 +546,8 @@
   <div class="wrap">
     <h2>Research in Progress</h2>
     <ul class="plain-list">
-      <li><span class="paper-title" style="font-size:1.05rem;">Examining the Long-Run Effects of Voluntary Prekindergarten</span>
-        <span class="paper-meta">with Zachary Gooch</span></li>
+      <li><span class="paper-title" style="font-size:1.05rem;">Worker's Compensation and Fertility</span>
+        <span class="paper-meta">with Shawn Kantor and Carl Kitchens</span></li>
     </ul>
   </div>
 </section>
