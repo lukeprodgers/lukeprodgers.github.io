@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luke P. Rodgers</title>
+<meta name="description" content="Luke P. Rodgers is an Associate Professor and Bernard Sliger Scholar in the Department of Economics at Florida State University. His research covers public and labor economics, with a primary interest in how tax policy affects families.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FCFCFA;
+    --ink: #1C1B1A;
+    --muted: #6D6A66;
+    --garnet: #782F40;
+    --garnet-soft: #F4ECEE;
+    --hairline: #E6E3DE;
+    --max-width: 760px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--garnet); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--garnet);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header / hero */
+  header {
+    border-top: 5px solid var(--garnet);
+    padding: 56px 0 40px;
+  }
+
+  h1 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  .role {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .role strong { color: var(--ink); font-weight: 600; }
+
+  .bio {
+    margin-top: 22px;
+    font-size: 1.05rem;
+    max-width: 58ch;
+  }
+
+  .contact-row {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 0.9rem;
+  }
+  .contact-row span.label {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    margin-right: 6px;
+  }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    z-index: 10;
+  }
+  nav .wrap {
+    display: flex;
+    gap: 26px;
+    overflow-x: auto;
+  }
+  nav a {
+    display: block;
+    padding: 12px 0;
+    color: var(--ink);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  nav a:hover { color: var(--garnet); text-decoration: none; }
+
+  /* Sections */
+  section { padding: 48px 0 8px; }
+  section:last-of-type { padding-bottom: 64px; }
+
+  h2 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 8px;
+  }
+
+  .section-note {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 10px 0 4px;
+  }
+
+  /* Paper list: ledger style with year column and expandable abstract */
+  details.paper {
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  details.paper summary {
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 58px 1fr 20px;
+    gap: 16px;
+    align-items: baseline;
+    padding: 16px 0;
+  }
+  details.paper summary::-webkit-details-marker { display: none; }
+
+  .year {
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .paper-title {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+  summary:hover .paper-title { color: var(--garnet); }
+
+  .paper-meta {
+    display: block;
+    margin-top: 4px;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .chev {
+    justify-self: end;
+    color: var(--muted);
+    transition: transform 0.25s ease;
+    font-size: 0.8rem;
+    transform: rotate(0deg);
+  }
+  details[open] .chev { transform: rotate(90deg); }
+
+  .paper-body {
+    padding: 0 0 20px 74px;
+  }
+
+  .abstract {
+    background: var(--garnet-soft);
+    border-left: 3px solid var(--garnet);
+    padding: 14px 18px;
+    font-size: 0.93rem;
+    border-radius: 0 4px 4px 0;
+  }
+  .abstract .abstract-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--garnet);
+    margin-bottom: 6px;
+  }
+
+  .paper-links {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  /* CV + contact */
+  .plain-list { list-style: none; }
+  .plain-list li { padding: 6px 0; }
+
+  footer {
+    border-top: 1px solid var(--hairline);
+    padding: 28px 0 48px;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 560px) {
+    details.paper summary {
+      grid-template-columns: 1fr 20px;
+      gap: 10px;
+    }
+    .year {
+      grid-column: 1 / -1;
+      order: -1;
+      margin-bottom: -8px;
+    }
+    .paper-body { padding-left: 0; }
+    header { padding: 40px 0 32px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .chev { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <!-- To add a photo, place an image file next to this page and uncomment:
+    <img src="photo.jpg" alt="Luke P. Rodgers" style="width:120px;border-radius:6px;margin-bottom:20px;">
+    -->
+    <h1>Luke P. Rodgers</h1>
+    <p class="role"><strong>Associate Professor and Bernard Sliger Scholar</strong><br>
+    Department of Economics, Florida State University</p>
+    <p class="bio">My research interests include public and labor economics, with a primary interest in how tax policy affects families.</p>
+    <div class="contact-row">
+      <div><span class="label">Email</span> lprodgers [at] fsu [dot] edu</div>
+      <div><span class="label">CV</span> <a href="cv.pdf">Curriculum Vitae (PDF)</a></div>
+    </div>
+  </div>
+</header>
+
+<nav aria-label="Site sections">
+  <div class="wrap">
+    <a href="#publications">Publications</a>
+    <a href="#working-papers">Working Papers</a>
+    <a href="#in-progress">In Progress</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <p class="section-note">Click a title to show the abstract.</p>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2026</span>
+        <span class="paper-title">Adding Race and Ethnicity to Microeconomic Databases: An Assessment of Alternative Options
+          <span class="paper-meta">with Keith Ihlanfeldt and Cynthia Yang. Forthcoming, Economic Inquiry.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="http://doi.org/10.1111/ecin.70052" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2024</span>
+        <span class="paper-title">Housing Values and Jurisdictional Fragmentation
+          <span class="paper-meta">with John Hatfield and Katrina Kosec. Public Choice.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1007/s11127-024-01160-6" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2024</span>
+        <span class="paper-title">Fiscal Incidence of the Property Tax
+          <span class="paper-meta">with Keith Ihlanfeldt. Public Finance Review.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1177/10911421241275214" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2023</span>
+        <span class="paper-title">The Impact of the WWI Agricultural Boom and Bust on Female Opportunity Cost and Fertility
+          <span class="paper-meta">with Carl Kitchens. The Economic Journal, 133(656): 2978-3006.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1093/ej/uead047" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2023</span>
+        <span class="paper-title">Tax Credit Refundability and Child Care Prices: Evidence from California
+          <span class="paper-meta">National Tax Journal, 76(1).</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1086/723229" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2022</span>
+        <span class="paper-title">Homestead Exemptions, Heterogeneous Assessment, and Property Tax Progressivity
+          <span class="paper-meta">with Keith Ihlanfeldt. National Tax Journal, 75(1): 7-31.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1086/717587" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2021</span>
+        <span class="paper-title">Dinner Timing and Human Capital Investments in Children
+          <span class="paper-meta">with Joseph Price and Jocelyn Wikle. Review of Economics of the Household, 19: 1047-1075.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1007/s11150-021-09554-x" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2020</span>
+        <span class="paper-title">Don't Tax My Dreams: The Lottery Sales Response to Gambling Tax Changes
+          <span class="paper-meta">Public Finance Review, 48(5): 627-649.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1177/1091142120945287" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2020</span>
+        <span class="paper-title">Who Responds to Changes to the Federal Adoption Tax Credit? Evidence from Florida
+          <span class="paper-meta">with Cullen Wallace. Southern Economic Journal, 87(2): 483-516.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1002/soej.12466" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2020</span>
+        <span class="paper-title">The Impact of Paid Family Leave on Household Saving
+          <span class="paper-meta">Labour Economics, 67.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="http://www.sciencedirect.com/science/article/pii/S0927537120301251" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">2018</span>
+        <span class="paper-title">Give Credit Where? The Incidence of Child Care Tax Credits
+          <span class="paper-meta">Journal of Urban Economics, 108: 51-71.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="http://www.sciencedirect.com/science/article/pii/S0094119018300792" target="_blank" rel="noopener">Journal &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<section id="working-papers">
+  <div class="wrap">
+    <h2>Working Papers</h2>
+
+    <details class="paper">
+      <summary>
+        <span class="year">R&amp;R</span>
+        <span class="paper-title">Beyond Assessment: Racial and Gender Disparities in Property Taxation
+          <span class="paper-meta">with Keith Ihlanfeldt</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year">NBER</span>
+        <span class="paper-title">Skill Formation, Child Labor, and the Schooling Consequences of the World War I Agricultural Boom
+          <span class="paper-meta">with Taylor Jaworski and Carl Kitchens. NBER Working Paper 35032.</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+        <div class="paper-links">
+          <a href="https://www.nber.org/papers/w35032" target="_blank" rel="noopener">NBER &#8599;</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year"></span>
+        <span class="paper-title">Nudging Away Disparities in Homestead Exemption Take-Up Rates
+          <span class="paper-meta">with Alannah Shute</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year"></span>
+        <span class="paper-title">Alternatives to Altruism: Charitable Donations and Deduction Trade-Offs
+          <span class="paper-meta"></span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+      </div>
+    </details>
+
+    <details class="paper">
+      <summary>
+        <span class="year"></span>
+        <span class="paper-title">1918 Influenza Pandemic Across America: New Evidence Using County-Level Data
+          <span class="paper-meta">with Ezra Goldstein, Carl Kitchens, and Annalise Maillet</span>
+        </span>
+        <span class="chev" aria-hidden="true">&#9656;</span>
+      </summary>
+      <div class="paper-body">
+        <div class="abstract"><span class="abstract-label">Abstract</span>
+          [Paste abstract here.]
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<section id="in-progress">
+  <div class="wrap">
+    <h2>Research in Progress</h2>
+    <ul class="plain-list">
+      <li><span class="paper-title" style="font-size:1.05rem;">Worker's Compensation and Fertility</span>
+        <span class="paper-meta">with Shawn Kantor and Carl Kitchens</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Luke P. Rodgers &middot; Department of Economics, Florida State University
+  </div>
+</footer>
+
+</body>
+</html>
